@@ -1,0 +1,65 @@
+/*! RESETS */
+html{
+    width: 100%;
+    height: 100%;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100%;
+    width: 100%;
+}
+/* ! BODY */
+.container{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 8vh 84vh 8vh;
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+}
+/* ! HEADER */
+.header-container{
+    grid-column: 2;
+    grid-row: 1;
+    background-color: gray;
+    height: 100%;
+    width: 100%;
+}
+/* ! MAIN */
+.main-container{
+    grid-column: 2;
+    grid-row: 2;
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+}
+
+/* ! NAV BAR */
+.nav-container{
+    grid-row: 1/4;
+    grid-column: 1;
+    height: 100%;
+    width: 100%;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-menu{
+    height: 90%;
+    width: 80%;
+    padding: 10px;
+    border: solid 1px red;
+}
+/* ! FOOTER */
+.footer-container{
+    grid-column: 2;
+    grid-row: 3;
+    height: 100%;
+    width: 100%;
+    background-color: beige;
+}
+
+/*? Remember that all input elements and buttons should have a minimun heigth of 44px */
