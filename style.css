@@ -12,10 +12,10 @@ body {
     width: 100%;
 }
 /* ! BODY */
-.container{
+.container-nb{
     display: grid;
     grid-template-columns: 20% 80%;
-    grid-template-rows: 8vh 84vh 8vh;
+    grid-template-rows: 13.8vh 78.2vh 8vh;
     grid-auto-rows: 1fr;
     grid-auto-columns: 1fr;
 }
@@ -34,6 +34,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: aqua;
+
 }
 
 /* ! NAV BAR */
@@ -42,8 +43,9 @@ body {
     grid-column: 1;
     height: 100%;
     width: 100%;
-    background-color: aquamarine;
+    background-color: #f0e14a;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -51,7 +53,30 @@ body {
     height: 90%;
     width: 80%;
     padding: 10px;
-    border: solid 1px red;
+}
+.season-btn{
+    border: none;
+    background-color: #97ce4c;
+    color: #44281d;
+    padding: 3px 0 3px 0;
+    margin: 5px 0 5px 0;
+    font-weight: 600;
+    outline: none;
+}
+.season-btn:hover{
+    background-color: #b9fa5d;
+}
+.episode-btn{
+background-color: transparent;
+border: none;
+margin: 2px 0 2px 0;
+}
+.episode-btn:hover{
+    text-decoration: underline;
+}
+.episode-btn i {
+    font-size: 9px;
+    text-align: center;
 }
 /* ! FOOTER */
 .footer-container{

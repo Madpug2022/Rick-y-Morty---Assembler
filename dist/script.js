@@ -1,4 +1,7 @@
 "use strict";
-console.log("Hola");
-console.log("Adios");
+import setupSeasonButtons from "./functionalities/season-btns.js";
+
+window.onload = function(){
+setupSeasonButtons();
+}
 //# sourceMappingURL=script.js.map

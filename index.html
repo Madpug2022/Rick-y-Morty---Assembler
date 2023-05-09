@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./dist/script.js" defer></script>
+    <script src="./dist/script.js" type="module" defer></script>
+    <script src="./js/bootstrap.js" defer></script>
+    <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="style.css"/>
     <link rel="icon" href="./resources/icon.jpg">
+    <script src="https://kit.fontawesome.com/d9005a0d59.js" crossorigin="anonymous" defer></script>
     <title>Rick and Morty: API</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container-nb">
         <div class="header-container">
             <header class="header">
                 1
@@ -24,8 +27,60 @@
             </main>
         </div>
         <div class="nav-container">
-            <nav class="nav-menu">
-
+            <div class="row">
+                <img src="resources/logo.jpg">
+            </div>
+            <nav class="nav-menu container">
+                <div class="row">
+                    <button class="season-btn" type="button" data-bs-toggle="collapse" data-bs-target="#season1" data-bs-parent=".nav-menu">
+                        Season 1
+                    </button>
+                    <div class="collapse" id="season1">
+                        <div class="card card-body">
+                            <!-- <button class="episode-btn"><i class="fa-sharp fa-solid fa-play"></i> Episode x</button> model to create-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="season-btn" type="button" data-bs-toggle="collapse" data-bs-target="#season2" data-bs-parent=".nav-menu">
+                        Season 2
+                    </button>
+                    <div class="collapse" id="season2">
+                        <div class="card card-body">
+                            <!-- <button class="episode-btn"><i class="fa-sharp fa-solid fa-play"></i> Episode x</button> model to create-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="season-btn" type="button" data-bs-toggle="collapse" data-bs-target="#season3" data-bs-parent=".nav-menu">
+                        Season 3
+                    </button>
+                    <div class="collapse" id="season3">
+                        <div class="card card-body">
+                            <!-- <button class="episode-btn"><i class="fa-sharp fa-solid fa-play"></i> Episode x</button> model to create-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="season-btn" type="button" data-bs-toggle="collapse" data-bs-target="#season4" data-bs-parent=".nav-menu">
+                        Season 4
+                    </button>
+                    <div class="collapse" id="season4">
+                        <div class="card card-body">
+                            <!-- <button class="episode-btn"><i class="fa-sharp fa-solid fa-play"></i> Episode x</button> model to create-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="season-btn" type="button" data-bs-toggle="collapse" data-bs-target="#season5" data-bs-parent=".nav-menu">
+                        Season 5
+                    </button>
+                    <div class="collapse" id="season5">
+                        <div class="card card-body">
+                            <!-- <button class="episode-btn"><i class="fa-sharp fa-solid fa-play"></i> Episode x</button> model to create-->
+                        </div>
+                    </div>
+                </div>
             </nav>
         </div>
         <div class="footer-container">
