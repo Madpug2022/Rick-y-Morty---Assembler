@@ -12,3 +12,4 @@ export function setupSeasonButtons() {
         });
     });
 }
+//# sourceMappingURL=season-btns.js.map

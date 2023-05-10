@@ -96,15 +96,15 @@ body {
 }
 .episode-btn{
 background-color: transparent;
+font-size: 13px;
+font-weight: 600;
 border: none;
-margin: 2px 0 2px 0;
+margin: 1px 0 1px 0;
+transition-duration: 0.4s;
 }
 .episode-btn:hover{
     text-decoration: underline;
-}
-.episode-btn i {
-    font-size: 9px;
-    text-align: center;
+    font-size: 14px;
 }
 /* ! FOOTER */
 .footer-container{
