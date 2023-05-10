@@ -107,7 +107,11 @@ margin: 2px 0 2px 0;
     grid-row: 3;
     height: 100%;
     width: 100%;
-    background-color: beige;
+    background-color: white;
+}
+.github-logo{
+    height: 55px;
+    width: 58px;
 }
 
 /*? Remember that all input elements and buttons should have a minimun heigth of 44px */
