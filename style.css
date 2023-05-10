@@ -55,10 +55,15 @@ body {
     grid-row: 2;
     height: 100%;
     width: 100%;
-    background-color: aqua;
+    background-image: url("resources/rick-_-morty-portal_4x.jpg");
+    background-size: 825px 550px;
+    background-repeat: no-repeat;
+    background-position: center center;
 
 }
-
+.main-h2{
+    font-size: 24px;
+}
 /* ! NAV BAR */
 .nav-container{
     grid-row: 1/4;
