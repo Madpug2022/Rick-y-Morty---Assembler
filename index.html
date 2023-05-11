@@ -18,16 +18,54 @@
             <header class="header">
                 <nav class="header container">
                     <div class="row text-center mt-4">
-                        <div class="col"><button class="top-nav-btn"><img src="resources/episodes-icon.jpg" alt="episodes-icon" class="top-icon"> Episodes</button></div>
-                        <div class="col"><button class="top-nav-btn"><img src="resources/character-icon.jpg" alt="episodes-icon" class="top-icon"> Characters</button></div>
-                        <div class="col"><button class="top-nav-btn"><img src="resources/location-icon.jpg" alt="episodes-icon" class="top-icon"> Locations</button></div>
+                        <div class="col"><button class="top-nav-btn" id="topEpisodesBtn"><img src="resources/episodes-icon.jpg" alt="episodes-icon" class="top-icon"> Episodes</button></div>
+                        <div class="col"><button class="top-nav-btn" id="topCharactersBtn"><img src="resources/character-icon.jpg" alt="characters-icon" class="top-icon"> Characters</button></div>
+                        <div class="col"><button class="top-nav-btn" id="topLocationBtn"><img src="resources/location-icon.jpg" alt="locations-icon" class="top-icon"> Locations</button></div>
                     </div>
                 </nav>
             </header>
         </div>
         <div class="main-container">
             <main class="main">
-                <section class="main-view container mt-3">
+                <!--Location Section-->
+                <section class="main-view container mt-3 location-view" style="display: none;" id="locationView">
+                    <div class="location-data">
+                        <h3 id="locationName fw-bold"></h3>
+                        <p class="lead" id="locationDataText"></p>
+                    </div>
+                    <hr>
+                    <div class="location-residents-container text-decoration-underline">
+                        <h4>Location Residents:</h4>
+                        <!--<div class="card m-1" style="width: 10rem;" id="residentCards">
+                                <img src="api.url" class="card-img-top" alt="...">
+                                <div class="card-body" id="cardBody">
+                                    <p class="card-text" style="font-size: 0.6rem;">Name</p>
+                                    <p class="card-text" style="font-size: 0.6rem;">Status</p>
+                                    <p class="card-text" style="font-size: 0.6rem;">Specie</p>
+                                </div>
+                            </div> to create -->
+                    </div>
+                </section>
+                <!--Character Section-->
+                <section class="main-view container mt-3 character-view" style="display: none;" id="characterView">
+                    <!--Things to update-->
+                    <div class="character-img-container"><img src="resources/github.jpg" alt="characterimg" class="character-img" id="characterImg"></div>
+                    <div class="character-data">
+                        <p class="char-data-text">Name: <span id="char-name"></span></p>
+                        <p class="char-data-text">Status: <span id="char-status"></span></p>
+                        <p class="char-data-text">Specie: <span id="char-specie"></span></p>
+                        <p class="char-data-text">Gender: <span id="char-gender"></span></p>
+                        <p class="char-data-text">Origin: <span id="char-origin"></span></p>
+                    </div>
+                    <div class="character-episodes">
+                        <span>Episodes List:</span>
+                        <div class="episode-list-container" id="episodeListContainer">
+
+                        </div>
+                    </div>
+                </section>
+                <!--Episode section-->
+                <section class="main-view container mt-3" id="episodeView">
                     <div class="row"><h2 class="main-h2" id="episodeName"><!--Episode name --></h2></div>
                     <div class="row"><h3 class="lead" id="episodeInfo"><!--info about--></h3></div>
                     <div class="row container main-character-board" id="mainCharacterBoard">
@@ -47,7 +85,20 @@
             <div class="row">
                 <img class="img-fluid" src="resources/logo.jpg">
             </div>
-            <nav class="nav-menu container">
+            <!--Location Nav-->
+            <nav class="nav-characters nav-menu container" style="display: none;" id="locationNavBar">
+                <div class="nav-characters-container" id="navLocationContainer">
+                    <!--<button type="button">Test</button> Element to create -->
+                </div>
+            </nav>
+            <!--Character Nav-->
+            <nav class="nav-characters nav-menu container" style="display: none;" id="charactersNavBar">
+                <div class="nav-characters-container" id="navCharactersContainer">
+                    <!--<button type="button">Test</button> Element to create -->
+                </div>
+            </nav>
+            <!--Episode Nav-->
+            <nav class="nav-menu container" id="episodesNavBar">
                 <div class="row">
                     <button class="season-btn" type="button" data-bs-toggle="collapse" data-bs-target="#season1" data-bs-parent=".nav-menu">
                         Season 1
