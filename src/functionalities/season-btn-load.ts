@@ -1,63 +1,95 @@
-export function loadSeasonBtns(){
-    const season1Content = document.querySelector('#season1Content');
-    const season2Content = document.querySelector('#season2Content');
-    const season3Content = document.querySelector('#season3Content');
-    const season4Content = document.querySelector('#season4Content');
-    const season5Content = document.querySelector('#season5Content');
+import { clearBoard } from "./clearBoard.js";
+export function loadSeasonBtns() {
+    const seasonContents = [
+        document.querySelector('#season1Content'),
+        document.querySelector('#season2Content'),
+        document.querySelector('#season3Content'),
+        document.querySelector('#season4Content'),
+        document.querySelector('#season5Content')
+    ];
 
-    for (let i = 1; i <= 11; i++){
-        fetch(`https://rickandmortyapi.com/api/episode/${i}`)
+    for (let i = 0; i < seasonContents.length; i++) {
+        const seasonContent = seasonContents[i];
+
+      for (let j = i * 10 + 1; j <= i * 10 + 10; j++) {
+        fetch(`https://rickandmortyapi.com/api/episode/${j}`)
             .then(response => response.json())
             .then(data => {
                 const episode = document.createElement("button");
                 episode.classList.add("episode-btn");
                 episode.textContent = data.name;
+                episode.addEventListener("click", () => {
+                    clearBoard();
+                    const episodeName = document.querySelector("#episodeName");
+                    const episodeInfo = document.querySelector("#episodeInfo");
+                    episodeName!.textContent = `Episode ${data.id}`
+                    episodeInfo!.textContent = `${data.episode} | ${data.air_date}`;
+                    loadMain(j);
+            });
 
-                season1Content!.appendChild(episode);
-            })
-    };
-    for (let i = 12; i <= 21; i++){
-        fetch(`https://rickandmortyapi.com/api/episode/${i}`)
+            seasonContent!.appendChild(episode);
+            });
+        }
+    }
+}
+function loadMain(i: number){
+    const mainCharacterBoard = document.querySelector("#mainCharacterBoard");
+    const url: string = `https://rickandmortyapi.com/api/episode/${i}`
+    getCharacters(url)
+    .then(characters => {
+        characters.forEach(character => {
+            fetch(character)
             .then(response => response.json())
-            .then(data => {
-                const episode = document.createElement("button");
-                episode.classList.add("episode-btn");
-                episode.textContent = data.name;
+            .then (data => {
+            const characterCard = document.createElement("div");
+            characterCard.classList.add("card");
+            characterCard.classList.add("m-1");
+            characterCard.style.width = "10rem";
+            characterCard.setAttribute("id", "characterCards")
 
-                season2Content!.appendChild(episode);
-            })
-    };
-    for (let i = 21; i <= 31; i++){
-        fetch(`https://rickandmortyapi.com/api/episode/${i}`)
-            .then(response => response.json())
-            .then(data => {
-                const episode = document.createElement("button");
-                episode.classList.add("episode-btn");
-                episode.textContent = data.name;
+            mainCharacterBoard!.appendChild(characterCard);
 
-                season3Content!.appendChild(episode);
-            })
-    };
-    for (let i = 31; i <= 41; i++){
-        fetch(`https://rickandmortyapi.com/api/episode/${i}`)
-            .then(response => response.json())
-            .then(data => {
-                const episode = document.createElement("button");
-                episode.classList.add("episode-btn");
-                episode.textContent = data.name;
+            const characterImg = document.createElement("img");
+            characterImg.setAttribute("src", data.image);
+            characterImg.classList.add("card-img-top");
 
-                season4Content!.appendChild(episode);
-            })
-    };
-    for (let i = 41; i <= 51; i++){
-        fetch(`https://rickandmortyapi.com/api/episode/${i}`)
-            .then(response => response.json())
-            .then(data => {
-                const episode = document.createElement("button");
-                episode.classList.add("episode-btn");
-                episode.textContent = data.name;
+            characterCard.appendChild(characterImg);
 
-                season5Content!.appendChild(episode);
-            })
-    };
+            const cardBody = document.createElement("div");
+            cardBody.setAttribute("id", "cardBody");
+
+            characterCard.appendChild(cardBody);
+
+            const name = document.createElement("p");
+            name.classList.add("card-text");
+            name.innerText = `Name: ${data.name}`;
+
+            cardBody.appendChild(name);
+
+            const status = document.createElement("p");
+            status.classList.add("card-text");
+            status.innerText = `Status: ${data.status}`;
+
+            cardBody.appendChild(status);
+
+            const specie = document.createElement("p");
+            specie.classList.add("card-text");
+            specie.innerText = `Specie: ${data.species}`;
+
+            cardBody.appendChild(specie);
+
+        })
+    })
+    })
+}
+async function getCharacters(url: string) {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const result: [] = data.characters;
+        return result;
+    } catch (error) {
+        console.error("Error:", error);
+        throw error;
+    }
 }

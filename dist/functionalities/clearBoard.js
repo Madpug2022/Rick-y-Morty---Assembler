@@ -1,0 +1,7 @@
+export function clearBoard() {
+    const cards = document.querySelectorAll("#characterCards");
+    cards.forEach(card => {
+        card.remove();
+    });
+}
+//# sourceMappingURL=clearBoard.js.map

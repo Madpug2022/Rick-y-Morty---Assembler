@@ -1,0 +1,1 @@
+{"version":3,"file":"clearBoard.js","sourceRoot":"","sources":["../../src/functionalities/clearBoard.ts"],"names":[],"mappings":"AAAA,MAAM,UAAU,UAAU;IACtB,MAAM,KAAK,GAAG,QAAQ,CAAC,gBAAgB,CAAC,iBAAiB,CAAC,CAAA;IAC1D,KAAK,CAAC,OAAO,CAAC,IAAI,CAAC,EAAE;QACjB,IAAI,CAAC,MAAM,EAAE,CAAC;IAClB,CAAC,CAAC,CAAA;AACN,CAAC"}
