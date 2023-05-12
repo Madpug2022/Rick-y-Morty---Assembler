@@ -1,7 +1,7 @@
 export function fillCharacterNavBar(): void{
     const navCharactersContainer: HTMLButtonElement | null = document.querySelector("#navCharactersContainer");
     let dataNumber: number = 0;
-    for (let i = 0; i <= 42; i++){
+    for (let i = 1; i < 43; i++){
     fetch(`https://rickandmortyapi.com/api/character?page=${i}`)
         .then(response => response.json())
         .then(data => {

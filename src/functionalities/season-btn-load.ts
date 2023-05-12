@@ -86,7 +86,7 @@ async function getCharacters(url: string) {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        const result: [] = data.characters;
+        const result: string[] = data.characters;
         return result;
     } catch (error) {
         console.error("Error:", error);
