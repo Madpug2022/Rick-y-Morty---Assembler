@@ -1,0 +1,1 @@
+{"version":3,"file":"cleanEpisodeBoard.js","sourceRoot":"","sources":["../../src/functionalities/cleanEpisodeBoard.ts"],"names":[],"mappings":"AAAA,MAAM,UAAU,iBAAiB;IAC7B,MAAM,eAAe,GAAG,QAAQ,CAAC,gBAAgB,CAAC,iBAAiB,CAAC,CAAC;IACrE,eAAe,CAAC,OAAO,CAAC,CAAC,OAAO,EAAE,EAAE,GAAE,OAAO,CAAC,MAAM,EAAE,CAAA,CAAA,CAAC,CAAC,CAAA;AAC5D,CAAC"}

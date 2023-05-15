@@ -1,3 +1,6 @@
+import { cleanEpisodeBoard } from './cleanEpisodeBoard.js';
+import { Character, CharacterStatus, CharacterSpecies, CharacterGender } from '../types/characters.js'
+import { fetchCharacter } from './fetchCharacter.js';
 export async function fillCharacterNavBar(): Promise<void> {
     const navCharactersContainer: HTMLButtonElement | null = document.querySelector("#navCharactersContainer");
     let dataNumber: number = 0;
@@ -59,61 +62,3 @@ export async function fillCharacterNavBar(): Promise<void> {
 
     await Promise.all(fetchPromises);
   }
-
-interface Character {
-    name: string;
-    status: CharacterStatus;
-    species: CharacterSpecies;
-    gender: CharacterGender;
-    origin: string;
-    image: string;
-    episode: []
-}
-
-enum CharacterStatus {
-    Alive = 'alive',
-    Dead = 'dead',
-    Unknown = 'unknown',
-}
-
-enum CharacterSpecies {
-    Human = 'Human',
-    Alien = 'Alien',
-    Unknown = 'unknown',
-}
-
-enum CharacterGender {
-    Male = 'Male',
-    Female = 'Female',
-    Genderless = 'Genderless',
-    Unknown = 'unknown',
-}
-
-async function fetchCharacter(id: string): Promise<Character> {
-    try {
-    const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
-    const data = await response.json();
-
-    const { name, status, species, gender, origin, image, episode } = data;
-
-    const character: Character = {
-        name,
-        status: status as CharacterStatus,
-        species: species as CharacterSpecies,
-        gender: gender as CharacterGender,
-        origin: origin.name,
-        image: image,
-        episode: episode
-    };
-
-    return character;
-    } catch (error) {
-    console.error('Error fetching character:', error);
-    throw error;
-    }
-}
-
-function cleanEpisodeBoard(){
-    const episodeElements = document.querySelectorAll("#episodeElement");
-    episodeElements.forEach((element) => {element.remove()})
-}

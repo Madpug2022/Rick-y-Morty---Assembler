@@ -1,3 +1,5 @@
+import { Location, LocationType } from '../types/location.js'
+import { fetchLocationData } from './fetchLocationData.js'
 export async function fillLocationNavBar(): Promise<void> {
     const locationNavBar: HTMLButtonElement | null = document.querySelector("#navLocationContainer");
     const locarionResidentsContainer = document.querySelector("#locarionResidentsContainer");
@@ -82,48 +84,6 @@ export async function fillLocationNavBar(): Promise<void> {
     }
 
     await Promise.all(fetchPromises);
-}
-
-interface Location {
-    name: string;
-    type: LocationType;
-    dimension: string;
-    residents: [];
-}
-
-enum LocationType {
-    CitadelofRicks = "Citadel of Ricks",
-    planet = "Planet",
-    spaceStation = "Space Station",
-    Microverse = "Microverse",
-    TV = "TV",
-    Resort = "Resort",
-    FantasyTown = "Fantasy Town",
-    Dream = "Dream",
-    Dimension = "Dimension",
-    Menagerie = "Menagerie",
-    Game = "Game",
-    Custom = "Custom",
-    unknown = "Unknown"
-}
-
-async function fetchLocationData(id: string): Promise<Location>{
-    try {
-        const response = await fetch(`https://rickandmortyapi.com/api/location/${id}`);
-        const data = await response.json();
-        const { name , type , dimension , residents } = data;
-
-        const location: Location = {
-            name,
-            type: type as LocationType,
-            dimension,
-            residents
-        };
-        return location;
-    } catch (error) {
-        console.error('Error fetching character:', error);
-        throw error;
-    }
 }
 
 function cleanResidents(){

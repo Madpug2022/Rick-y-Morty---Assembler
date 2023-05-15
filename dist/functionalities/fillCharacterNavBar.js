@@ -7,6 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { cleanEpisodeBoard } from './cleanEpisodeBoard.js';
+import { fetchCharacter } from './fetchCharacter.js';
 export function fillCharacterNavBar() {
     return __awaiter(this, void 0, void 0, function* () {
         const navCharactersContainer = document.querySelector("#navCharactersContainer");
@@ -58,51 +60,5 @@ export function fillCharacterNavBar() {
         }
         yield Promise.all(fetchPromises);
     });
-}
-var CharacterStatus;
-(function (CharacterStatus) {
-    CharacterStatus["Alive"] = "alive";
-    CharacterStatus["Dead"] = "dead";
-    CharacterStatus["Unknown"] = "unknown";
-})(CharacterStatus || (CharacterStatus = {}));
-var CharacterSpecies;
-(function (CharacterSpecies) {
-    CharacterSpecies["Human"] = "Human";
-    CharacterSpecies["Alien"] = "Alien";
-    CharacterSpecies["Unknown"] = "unknown";
-})(CharacterSpecies || (CharacterSpecies = {}));
-var CharacterGender;
-(function (CharacterGender) {
-    CharacterGender["Male"] = "Male";
-    CharacterGender["Female"] = "Female";
-    CharacterGender["Genderless"] = "Genderless";
-    CharacterGender["Unknown"] = "unknown";
-})(CharacterGender || (CharacterGender = {}));
-function fetchCharacter(id) {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const response = yield fetch(`https://rickandmortyapi.com/api/character/${id}`);
-            const data = yield response.json();
-            const { name, status, species, gender, origin, image, episode } = data;
-            const character = {
-                name,
-                status: status,
-                species: species,
-                gender: gender,
-                origin: origin.name,
-                image: image,
-                episode: episode
-            };
-            return character;
-        }
-        catch (error) {
-            console.error('Error fetching character:', error);
-            throw error;
-        }
-    });
-}
-function cleanEpisodeBoard() {
-    const episodeElements = document.querySelectorAll("#episodeElement");
-    episodeElements.forEach((element) => { element.remove(); });
 }
 //# sourceMappingURL=fillCharacterNavBar.js.map

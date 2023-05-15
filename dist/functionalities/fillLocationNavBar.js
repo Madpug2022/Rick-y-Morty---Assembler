@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { fetchLocationData } from './fetchLocationData.js';
 export function fillLocationNavBar() {
     return __awaiter(this, void 0, void 0, function* () {
         const locationNavBar = document.querySelector("#navLocationContainer");
@@ -77,42 +78,6 @@ export function fillLocationNavBar() {
             }));
         }
         yield Promise.all(fetchPromises);
-    });
-}
-var LocationType;
-(function (LocationType) {
-    LocationType["CitadelofRicks"] = "Citadel of Ricks";
-    LocationType["planet"] = "Planet";
-    LocationType["spaceStation"] = "Space Station";
-    LocationType["Microverse"] = "Microverse";
-    LocationType["TV"] = "TV";
-    LocationType["Resort"] = "Resort";
-    LocationType["FantasyTown"] = "Fantasy Town";
-    LocationType["Dream"] = "Dream";
-    LocationType["Dimension"] = "Dimension";
-    LocationType["Menagerie"] = "Menagerie";
-    LocationType["Game"] = "Game";
-    LocationType["Custom"] = "Custom";
-    LocationType["unknown"] = "Unknown";
-})(LocationType || (LocationType = {}));
-function fetchLocationData(id) {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const response = yield fetch(`https://rickandmortyapi.com/api/location/${id}`);
-            const data = yield response.json();
-            const { name, type, dimension, residents } = data;
-            const location = {
-                name,
-                type: type,
-                dimension,
-                residents
-            };
-            return location;
-        }
-        catch (error) {
-            console.error('Error fetching character:', error);
-            throw error;
-        }
     });
 }
 function cleanResidents() {
