@@ -242,7 +242,31 @@ transition-duration: 0.4s;
     height: 55px;
     width: 58px;
 }
-
+/*MODALS*/
+.custom-btn{
+    background-color: #97ce4c;
+    border-color: #97ce4c;
+    color: #fff;
+}
+.custom-btn:focus,
+.custom-btn:active,
+.custom-btn:hover {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(240, 225, 74, 0.5);
+    color: #44281d;
+}
+.custom-btn2{
+    background-color: #f0e14a;
+    border-color: #f0e14a;
+    color: #44281d;
+}
+.custom-btn2:focus,
+.custom-btn2:active,
+.custom-btn2:hover {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem #e89ac7;
+    color: #764c65;
+}
 /*? Remember that all input elements and buttons should have a minimun heigth of 44px */
 @keyframes rotate{
     0% {

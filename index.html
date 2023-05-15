@@ -13,6 +13,53 @@
     <title>Rick and Morty: API</title>
 </head>
 <body>
+    <!--MODAL-->
+    <div class="modal fade" id="characterModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel" id="modalCharacterTitle">Modal 1</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                <div class="col-lg-5">
+                    <img src="..." class="img-fluid" alt="modalCharacterImg" id="mCharacterImg">
+                </div>
+                <div class="col-lg-7">
+                    <p class="fw-bold">NAME: <span class="fw-lighter" id="mCharacterName"></span></p>
+                    <p class="fw-bold">Status <span class="fw-lighter" id="mCharacterStatus"></span></p>
+                    <p class="fw-bold">Specie <span class="fw-lighter" id="mCharacterSpecie"></span></p>
+                    <p class="fw-bold">Genre <span class="fw-lighter" id="mCharacterGenre"></span></p>
+                    <p class="fw-bold">Origin <span class="fw-lighter" id="mCharacterOrigin"></span></p>
+                </div>
+                </div>
+            </div>
+            <div class="modal-footer d-grid gap-2 d-md-flex justify-content-md-center">
+            <button class="btn custom-btn btn-sm" id="mLocationBtn">Location</button>
+            <button class="btn custom-btn btn-sm" data-bs-target="#episodesModal" data-bs-toggle="modal" data-bs-target="#characterModal">Episodes</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="modal fade" id="episodesModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Episodes</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" >
+                <div class="row d-md-flex justify-content-md-center" id="mEpisodesList">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button class="btn custom-btn btn-sm" data-bs-target="#episodesModal" data-bs-toggle="modal">Back to character</button>
+            </div>
+        </div>
+        </div>
+    </div>
     <div class="container-nb">
         <div class="header-container">
             <header class="header">

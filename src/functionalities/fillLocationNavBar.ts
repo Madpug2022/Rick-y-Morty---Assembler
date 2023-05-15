@@ -1,4 +1,3 @@
-import { Location, LocationType } from '../types/location.js'
 import { fetchLocationData } from './fetchLocationData.js'
 export async function fillLocationNavBar(): Promise<void> {
     const locationNavBar: HTMLButtonElement | null = document.querySelector("#navLocationContainer");

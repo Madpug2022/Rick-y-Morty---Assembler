@@ -1,5 +1,4 @@
 import { cleanEpisodeBoard } from './cleanEpisodeBoard.js';
-import { Character, CharacterStatus, CharacterSpecies, CharacterGender } from '../types/characters.js'
 import { fetchCharacter } from './fetchCharacter.js';
 export async function fillCharacterNavBar(): Promise<void> {
     const navCharactersContainer: HTMLButtonElement | null = document.querySelector("#navCharactersContainer");
