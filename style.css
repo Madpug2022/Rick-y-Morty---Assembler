@@ -57,11 +57,23 @@ body {
     grid-row: 2;
     height: 100%;
     width: 100%;
+    position: relative;
+    overflow: hidden;
+
+}
+.vortex{
+    grid-column: 2;
+    grid-row: 2;
+    height: 100%;
+    width: 100%;
+    position: absolute;
     background-image: url("resources/rick-_-morty-portal_4x.jpg");
-    background-size: 825px 550px;
+    background-size: 750px 550px;
     background-repeat: no-repeat;
     background-position: center center;
-
+    transform-origin: center center;
+    z-index: -1;
+    animation: rotate 15s linear infinite;
 }
 .main-h2{
     font-size: 24px;
@@ -75,6 +87,7 @@ body {
     display: grid;
     grid-template-rows: 25% 75%;
     grid-template-columns: 25% 75%;
+    z-index: 10;
 }
 .character-img-container{
     grid-column: 1;
@@ -230,7 +243,15 @@ transition-duration: 0.4s;
 }
 
 /*? Remember that all input elements and buttons should have a minimun heigth of 44px */
+@keyframes rotate{
+    0% {
+        transform: rotate(0deg);
+    }
 
+    100% {
+        transform: rotate(360deg);
+    }
+}
 @media screen and (max-width:500px){
     .top-nav-btn{
         height: 50px;
