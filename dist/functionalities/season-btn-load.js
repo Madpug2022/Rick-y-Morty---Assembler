@@ -16,10 +16,12 @@ export function loadSeasonBtns() {
         document.querySelector('#season4Content'),
         document.querySelector('#season5Content')
     ];
-    for (let i = 0; i < seasonContents.length; i++) {
-        const seasonContent = seasonContents[i];
-        for (let j = i * 10 + 1; j <= i * 10 + 10; j++) {
-            fetch(`https://rickandmortyapi.com/api/episode/${j}`)
+    const fetchPromises = [];
+    seasonContents.forEach((seasonContent, index) => {
+        const startEpisode = index * 10 + 1;
+        const endEpisode = startEpisode + 9;
+        for (let j = startEpisode; j <= endEpisode; j++) {
+            fetchPromises.push(fetch(`https://rickandmortyapi.com/api/episode/${j}`)
                 .then(response => response.json())
                 .then(data => {
                 const episode = document.createElement("button");
@@ -34,9 +36,10 @@ export function loadSeasonBtns() {
                     loadMain(j);
                 });
                 seasonContent.appendChild(episode);
-            });
+            }));
         }
-    }
+    });
+    return Promise.all(fetchPromises);
 }
 function loadMain(i) {
     const mainCharacterBoard = document.querySelector("#mainCharacterBoard");

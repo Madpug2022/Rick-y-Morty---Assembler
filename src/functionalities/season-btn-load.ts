@@ -1,36 +1,43 @@
 import { clearBoard } from "./clearBoard.js";
 export function loadSeasonBtns() {
     const seasonContents = [
-        document.querySelector('#season1Content'),
-        document.querySelector('#season2Content'),
-        document.querySelector('#season3Content'),
-        document.querySelector('#season4Content'),
-        document.querySelector('#season5Content')
+    document.querySelector('#season1Content'),
+    document.querySelector('#season2Content'),
+    document.querySelector('#season3Content'),
+    document.querySelector('#season4Content'),
+    document.querySelector('#season5Content')
     ];
 
-    for (let i = 0; i < seasonContents.length; i++) {
-        const seasonContent = seasonContents[i];
+    const fetchPromises: Promise<any>[] = [];
 
-      for (let j = i * 10 + 1; j <= i * 10 + 10; j++) {
+    seasonContents.forEach((seasonContent, index) => {
+      const startEpisode = index * 10 + 1;
+    const endEpisode = startEpisode + 9;
+
+    for (let j = startEpisode; j <= endEpisode; j++) {
+        fetchPromises.push(
         fetch(`https://rickandmortyapi.com/api/episode/${j}`)
             .then(response => response.json())
             .then(data => {
-                const episode = document.createElement("button");
-                episode.classList.add("episode-btn");
-                episode.textContent = data.name;
-                episode.addEventListener("click", () => {
-                    clearBoard();
-                    const episodeName = document.querySelector("#episodeName");
-                    const episodeInfo = document.querySelector("#episodeInfo");
-                    episodeName!.textContent = `Episode ${data.id}`
-                    episodeInfo!.textContent = `${data.episode} | ${data.air_date}`;
-                    loadMain(j);
+            const episode = document.createElement("button");
+            episode.classList.add("episode-btn");
+            episode.textContent = data.name;
+            episode.addEventListener("click", () => {
+                clearBoard();
+                const episodeName = document.querySelector("#episodeName");
+                const episodeInfo = document.querySelector("#episodeInfo");
+                episodeName!.textContent = `Episode ${data.id}`;
+                episodeInfo!.textContent = `${data.episode} | ${data.air_date}`;
+                loadMain(j);
             });
 
             seasonContent!.appendChild(episode);
-            });
-        }
+            })
+        );
     }
+    });
+
+    return Promise.all(fetchPromises);
 }
 function loadMain(i: number){
     const mainCharacterBoard = document.querySelector("#mainCharacterBoard");
