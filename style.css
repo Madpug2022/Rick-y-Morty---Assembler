@@ -176,6 +176,7 @@ body {
     height: 90%;
     width: 80%;
     padding: 10px;
+    overflow-y: auto;
 }
 /*episodes*/
 .season-btn{

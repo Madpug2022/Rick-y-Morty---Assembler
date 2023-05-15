@@ -26,7 +26,7 @@ export function loadSeasonBtns() {
                 .then(data => {
                 const episode = document.createElement("button");
                 episode.classList.add("episode-btn");
-                episode.textContent = data.name;
+                episode.textContent = `Episode ${j}: ${data.name}`;
                 episode.addEventListener("click", () => {
                     clearBoard();
                     const episodeName = document.querySelector("#episodeName");
@@ -46,36 +46,36 @@ function loadMain(i) {
     const url = `https://rickandmortyapi.com/api/episode/${i}`;
     getCharacters(url)
         .then(characters => {
-        characters.forEach(character => {
-            fetch(character)
-                .then(response => response.json())
-                .then(data => {
-                const characterCard = document.createElement("div");
-                characterCard.classList.add("card");
-                characterCard.classList.add("m-1");
-                characterCard.style.width = "10rem";
-                characterCard.setAttribute("id", "characterCards");
-                mainCharacterBoard.appendChild(characterCard);
-                const characterImg = document.createElement("img");
-                characterImg.setAttribute("src", data.image);
-                characterImg.classList.add("card-img-top");
-                characterCard.appendChild(characterImg);
-                const cardBody = document.createElement("div");
-                cardBody.setAttribute("id", "cardBody");
-                characterCard.appendChild(cardBody);
-                const name = document.createElement("p");
-                name.classList.add("card-text");
-                name.innerText = `Name: ${data.name}`;
-                cardBody.appendChild(name);
-                const status = document.createElement("p");
-                status.classList.add("card-text");
-                status.innerText = `Status: ${data.status}`;
-                cardBody.appendChild(status);
-                const specie = document.createElement("p");
-                specie.classList.add("card-text");
-                specie.innerText = `Specie: ${data.species}`;
-                cardBody.appendChild(specie);
-            });
+        const characterFetchPromises = characters.map(character => fetch(character).then(response => response.json()));
+        return Promise.all(characterFetchPromises);
+    })
+        .then(dataArray => {
+        dataArray.forEach(data => {
+            const characterCard = document.createElement("div");
+            characterCard.classList.add("card");
+            characterCard.classList.add("m-1");
+            characterCard.style.width = "10rem";
+            characterCard.setAttribute("id", "characterCards");
+            mainCharacterBoard.appendChild(characterCard);
+            const characterImg = document.createElement("img");
+            characterImg.setAttribute("src", data.image);
+            characterImg.classList.add("card-img-top");
+            characterCard.appendChild(characterImg);
+            const cardBody = document.createElement("div");
+            cardBody.setAttribute("id", "cardBody");
+            characterCard.appendChild(cardBody);
+            const name = document.createElement("p");
+            name.classList.add("card-text");
+            name.innerText = `Name: ${data.name}`;
+            cardBody.appendChild(name);
+            const status = document.createElement("p");
+            status.classList.add("card-text");
+            status.innerText = `Status: ${data.status}`;
+            cardBody.appendChild(status);
+            const specie = document.createElement("p");
+            specie.classList.add("card-text");
+            specie.innerText = `Specie: ${data.species}`;
+            cardBody.appendChild(specie);
         });
     });
 }
