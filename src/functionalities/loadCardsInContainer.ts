@@ -1,3 +1,5 @@
+//This function loads the cards of the characters when you click in one episode in the episode section
+//is imported into season-btn-load
 export function loadMain(i: number) {
     const mainCharacterBoard = document.querySelector("#mainCharacterBoard");
     const url: string = `https://rickandmortyapi.com/api/episode/${i}`;
@@ -16,6 +18,7 @@ export function loadMain(i: number) {
         characterCard.classList.add("card");
         characterCard.classList.add("m-1");
         characterCard.style.width = "10rem";
+        characterCard.style.cursor = "pointer";
         characterCard.setAttribute("id", "characterCards");
         characterCard.setAttribute("data-bs-toggle", "modal");
         characterCard.setAttribute("data-bs-target", "#characterModal");

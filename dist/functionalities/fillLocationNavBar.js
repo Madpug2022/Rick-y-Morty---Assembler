@@ -7,6 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+//This function fills the nav bar in the location section
+//is imported into final script
 import { fetchLocationData } from './fetchLocationData.js';
 export function fillLocationNavBar() {
     return __awaiter(this, void 0, void 0, function* () {

@@ -7,6 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+//This function is used to fill the nav bar in the character section
+//is imported into final script
 import { cleanEpisodeBoard } from './cleanEpisodeBoard.js';
 import { fetchCharacter } from './fetchCharacter.js';
 export function fillCharacterNavBar() {

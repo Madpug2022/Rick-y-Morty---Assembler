@@ -1,3 +1,5 @@
+//This function loads the episodes into every season button in the episode section
+//is imported into the final script
 import { clearBoard } from "./clearBoard.js";
 import { loadMain } from "./loadCardsInContainer.js";
 export function loadSeasonBtns() {

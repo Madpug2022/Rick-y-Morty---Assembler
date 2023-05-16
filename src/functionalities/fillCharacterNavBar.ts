@@ -1,3 +1,5 @@
+//This function is used to fill the nav bar in the character section
+//is imported into final script
 import { cleanEpisodeBoard } from './cleanEpisodeBoard.js';
 import { fetchCharacter } from './fetchCharacter.js';
 export async function fillCharacterNavBar(): Promise<void> {

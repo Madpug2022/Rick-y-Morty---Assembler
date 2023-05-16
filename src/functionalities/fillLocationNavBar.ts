@@ -1,3 +1,5 @@
+//This function fills the nav bar in the location section
+//is imported into final script
 import { fetchLocationData } from './fetchLocationData.js'
 export async function fillLocationNavBar(): Promise<void> {
     const locationNavBar: HTMLButtonElement | null = document.querySelector("#navLocationContainer");

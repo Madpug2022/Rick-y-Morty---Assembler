@@ -1,3 +1,5 @@
+//This function is used to fetch the data of a defined character, it receives the id of if and gets all corresponding data
+//is imported in fillCharacterNavBar
 import { Character, CharacterStatus, CharacterSpecies, CharacterGender } from '../types/characters.js'
 
 export async function fetchCharacter(id: string): Promise<Character> {

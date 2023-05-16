@@ -1,3 +1,5 @@
+//This functio is used to fetch the data from a location, it receives the id and gets all corresponding data.
+//is imported in fillLocationNavBar
 import { Location, LocationType } from '../types/location.js'
 export async function fetchLocationData(id: string): Promise<Location>{
     try {

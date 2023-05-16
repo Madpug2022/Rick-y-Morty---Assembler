@@ -13,12 +13,36 @@
     <title>Rick and Morty: API</title>
 </head>
 <body>
+    <!--WELCOME MODAL-->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header d-md-flex justify-content-md-center">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">WELCOME!</h1>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <img src="resources/welcoming.jpg" class="img-fluid" alt="modalCharacterImg">
+                    </div>
+                    <div class="col-lg-7">
+                        <p class="fw-bold">Ooowee! I am Mr. Poopybutthole! You know me! Oh boy Oh my! This is an amazing page we have here! Ooowe. You can look for the episodes you want in the left sections and navigate trougth locations and characters in the upper bar! Oowee, Say thaks to Matias Chiappa boy for creating this page! Oowe! Now if you understood, click the button below me pal' and have a good ol' day!</p>
+                    </div>
+                    </div>
+            </div>
+            <div class="modal-footer d-md-flex justify-content-md-center">
+            <button type="button" class="custom-btn btn-lg" id="understoodBtn">Understood, owee?</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
     <!--MODAL-->
     <div class="modal fade" id="characterModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalToggleLabel" id="modalCharacterTitle">Modal 1</h1>
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel" id="modalCharacterTitle">Character BIO</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -132,7 +156,7 @@
         </div>
         <div class="nav-container">
             <div class="row">
-                <img class="img-fluid" src="resources/logo.jpg">
+                <img class="img-fluid logo" src="resources/logo.jpg">
             </div>
             <!--Location Nav-->
             <nav class="nav-characters nav-menu container" style="display: none;" id="locationNavBar">

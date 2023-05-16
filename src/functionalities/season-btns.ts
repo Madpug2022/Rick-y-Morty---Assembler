@@ -1,3 +1,5 @@
+//This function prevents the opening of two simultaneous seasons in the episode section
+//is imported into the final script
 declare var bootstrap: any;
 
 export function setupSeasonButtons() {

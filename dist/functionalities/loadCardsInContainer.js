@@ -7,6 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+//This function loads the cards of the characters when you click in one episode in the episode section
+//is imported into season-btn-load
 export function loadMain(i) {
     const mainCharacterBoard = document.querySelector("#mainCharacterBoard");
     const url = `https://rickandmortyapi.com/api/episode/${i}`;
@@ -22,6 +24,7 @@ export function loadMain(i) {
             characterCard.classList.add("card");
             characterCard.classList.add("m-1");
             characterCard.style.width = "10rem";
+            characterCard.style.cursor = "pointer";
             characterCard.setAttribute("id", "characterCards");
             characterCard.setAttribute("data-bs-toggle", "modal");
             characterCard.setAttribute("data-bs-target", "#characterModal");

@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Madpug2022/Rick-y-Morty---Assembler/issues"
   },
-  "homepage": "https://github.com/Madpug2022/Rick-y-Morty---Assembler#readme"
+  "homepage": "https://github.com/Madpug2022/Rick-y-Morty---Assembler#readme",
+  "dependencies": {
+    "@types/bootstrap": "^5.2.6"
+  }
 }

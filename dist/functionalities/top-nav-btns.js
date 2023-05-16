@@ -1,3 +1,4 @@
+//this function gives functionalitie to the buttons in the top nav bar
 export function setEventsToTopNavButtons() {
     // Button selection
     const topEpisodesBtn = document.querySelector("#topEpisodesBtn");
