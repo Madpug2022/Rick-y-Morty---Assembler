@@ -5,6 +5,7 @@ import { fillCharacterNavBar } from "./functionalities/fillCharacterNavBar.js";
 import { fillLocationNavBar } from "./functionalities/fillLocationNavBar.js";
 import { openModal } from "./functionalities/welcome.js";
 import { understood } from "./functionalities/goodbye.js";
+import { setSearchBar } from "./functionalities/searchbar.js"
 
 window.onload = function(){
 setupSeasonButtons();
@@ -14,4 +15,5 @@ fillCharacterNavBar();
 fillLocationNavBar();
 openModal();
 understood();
+setSearchBar();
 }

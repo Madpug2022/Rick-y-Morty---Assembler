@@ -268,6 +268,40 @@ transition-duration: 0.4s;
     box-shadow: 0 0 0 0.2rem #e89ac7;
     color: #764c65;
 }
+/*! SEARCH BAR*/
+.search-bar {
+    position: relative;
+}
+
+.search-bar-input {
+    height: 40px;
+    border: none;
+    z-index: 10;
+    outline: 3px solid transparent;
+    padding-left: 3px;
+    margin-right: 6px;
+}
+
+.search-bar-icon {
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    transition: 0.8s ease-in-out;
+    overflow: hidden;
+}
+.search-bar-icon:hover{
+    transform: rotate(90deg);
+    font-size: 26px;
+}
+.search-bar-text {
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.search-bar-input {
+    outline-color: #97ce4c;
+}
+
 /*? Remember that all input elements and buttons should have a minimun heigth of 44px */
 @keyframes rotate{
     0% {
@@ -405,9 +439,6 @@ transition-duration: 0.4s;
         box-shadow: none;
         border: 1px solid rgba(124, 240, 74, 0.5);
         background-color: #b9fa5d;
-
-    }
-    .logo{
 
     }
 }
