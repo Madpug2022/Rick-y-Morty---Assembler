@@ -1,37 +1,43 @@
 /*! RESETS */
-html{
+html {
     width: 100%;
     height: 100%;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
+
 body {
     height: 100%;
     width: 100%;
 }
+
 /* ! BODY */
-.container-nb{
+.container-nb {
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: 13.8vh 78.2vh 8vh;
     grid-auto-rows: 1fr;
     grid-auto-columns: 1fr;
 }
+
 /* ! HEADER */
-.header-container{
+.header-container {
     grid-column: 2;
     grid-row: 1;
     background-color: #f0e14a;
     height: 100%;
     width: 100%;
 }
+
 .header {
     height: 100%;
     width: 100%;
 }
-.top-nav-btn{
+
+.top-nav-btn {
     text-align: center;
     height: 52px;
     padding: 3px;
@@ -44,15 +50,18 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-.top-nav-btn:hover{
+
+.top-nav-btn:hover {
     background-color: #97ce4c;
 }
-.top-icon{
+
+.top-icon {
     height: 44px;
     width: 44px;
 }
+
 /* ! MAIN EPISODES */
-.main-container{
+.main-container {
     grid-column: 2;
     grid-row: 2;
     height: 100%;
@@ -61,7 +70,8 @@ body {
     overflow: hidden;
 
 }
-.vortex{
+
+.vortex {
     grid-column: 2;
     grid-row: 2;
     height: 100%;
@@ -75,21 +85,26 @@ body {
     z-index: -1;
     animation: rotate 15s linear infinite;
 }
-.main-h2{
+
+.main-h2 {
     font-size: 24px;
 }
-.main-character-board{
+
+.main-character-board {
     max-height: 60vh;
     overflow-y: auto;
 }
+
 /*! MAIN CHARACTERS*/
-.character-view{
+.character-view {
     display: grid;
-    grid-template-rows: 25% 75%;
+    grid-template-rows: 50% 50%;
     grid-template-columns: 25% 75%;
     z-index: 10;
+    height: 80vh;
 }
-.character-img-container{
+
+.character-img-container {
     grid-column: 1;
     height: 100%;
     width: 100%;
@@ -98,25 +113,30 @@ body {
     justify-content: center;
     cursor: pointer;
 }
-.character-img{
+
+.character-img {
     margin: auto;
     height: 85%;
     width: 85%;
     border: 3px solid lightgray;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
-.character-data{
+
+.character-data {
     background-color: rgba(255, 255, 255, 0.75);
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100%;
 }
-.char-data-text{
+
+.char-data-text {
     font-weight: 700;
 }
-.character-episodes{
+
+.character-episodes {
     background-color: rgba(255, 255, 255, 0.75);
     margin-top: 8px;
     grid-row: 2;
@@ -124,45 +144,54 @@ body {
     padding: 20px;
     height: 100%;
 }
-.character-episodes span:first-child{
+
+.character-episodes span:first-child {
     font-size: 20px;
     font-weight: 600;
 }
-.char-data-text-span{
+
+.char-data-text-span {
     font-size: 18px;
     font-weight: 400;
     text-decoration: none !important;
 }
+
 .episode-list-container {
     display: grid;
     grid-template-columns: repeat(12, auto);
 }
-.episode-list-container p{
+
+.episode-list-container p {
     height: 100%;
     margin: auto;
     padding: 0;
 }
+
 /*! MAIN LOCATIONS*/
-.location-view{
+.location-view {
     display: grid;
     grid-template-rows: 20% 80%;
 }
-.location-residents-container{
+
+.location-residents-container {
     max-height: 60vh;
     overflow-y: auto;
     display: grid;
     grid-template-rows: 1fr auto;
     grid-template-columns: repeat(12, auto);
 }
-.location-residents-container h4{
+
+.location-residents-container h4 {
     grid-row: 1;
 }
-.location-residents-container > * {
+
+.location-residents-container>* {
     grid-row: 2;
 }
+
 /* ! NAV BAR */
 /*generals*/
-.nav-container{
+.nav-container {
     grid-row: 1/4;
     grid-column: 1;
     height: 100%;
@@ -173,14 +202,20 @@ body {
     align-items: center;
     justify-content: center;
 }
-.nav-menu{
+
+.nav-menu {
     height: 90%;
     width: 80%;
     padding: 10px;
     overflow-y: auto;
 }
+
+.nav-menu ::-webkit-scrollbar {
+    display: none;
+}
+
 /*episodes*/
-.season-btn{
+.season-btn {
     border: none;
     background-color: #97ce4c;
     color: #44281d;
@@ -190,27 +225,32 @@ body {
     outline: none;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
-.season-btn:hover{
+
+.season-btn:hover {
     background-color: #b9fa5d;
 }
-.episode-btn{
-background-color: transparent;
-font-size: 13px;
-font-weight: 600;
-border: none;
-margin: 1px 0 1px 0;
-transition-duration: 0.4s;
+
+.episode-btn {
+    background-color: transparent;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    margin: 1px 0 1px 0;
+    transition-duration: 0.4s;
 }
-.episode-btn:hover{
+
+.episode-btn:hover {
     text-decoration: underline;
     font-size: 14px;
 }
+
 /*characters*/
-.nav-characters{
+.nav-characters {
     display: flex;
     flex-direction: column;
 }
-.nav-characters-container{
+
+.nav-characters-container {
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -218,37 +258,43 @@ transition-duration: 0.4s;
     max-height: 80vh;
     overflow-y: auto;
 }
-.nav-characters-container button{
+
+.nav-characters-container button {
     background-color: whitesmoke;
     font-size: 15px;
     font-weight: 400;
     color: #44281d;
     border: none;
     margin: 1px;
-    box-shadow: 2px 1px 1px rgba(0,0,0,0.4);
+    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.4);
 }
-.nav-characters-container button:hover{
+
+.nav-characters-container button:hover {
     background-color: #b9fa5d;
     font-weight: 700;
 }
+
 /* ! FOOTER */
-.footer-container{
+.footer-container {
     grid-column: 2;
     grid-row: 3;
     height: 100%;
     width: 100%;
     background-color: white;
 }
-.github-logo{
+
+.github-logo {
     height: 55px;
     width: 58px;
 }
+
 /*MODALS*/
-.custom-btn{
+.custom-btn {
     background-color: #97ce4c;
     border-color: #97ce4c;
     color: #fff;
 }
+
 .custom-btn:focus,
 .custom-btn:active,
 .custom-btn:hover {
@@ -256,11 +302,13 @@ transition-duration: 0.4s;
     box-shadow: 0 0 0 0.2rem rgba(240, 225, 74, 0.5);
     color: #44281d;
 }
-.custom-btn2{
+
+.custom-btn2 {
     background-color: #f0e14a;
     border-color: #f0e14a;
     color: #44281d;
 }
+
 .custom-btn2:focus,
 .custom-btn2:active,
 .custom-btn2:hover {
@@ -268,6 +316,7 @@ transition-duration: 0.4s;
     box-shadow: 0 0 0 0.2rem #e89ac7;
     color: #764c65;
 }
+
 /*! SEARCH BAR*/
 .search-bar {
     position: relative;
@@ -289,10 +338,12 @@ transition-duration: 0.4s;
     transition: 0.8s ease-in-out;
     overflow: hidden;
 }
-.search-bar-icon:hover{
+
+.search-bar-icon:hover {
     transform: rotate(90deg);
     font-size: 26px;
 }
+
 .search-bar-text {
     opacity: 1;
     transition: opacity 0.4s ease-in-out;
@@ -303,7 +354,7 @@ transition-duration: 0.4s;
 }
 
 /*? Remember that all input elements and buttons should have a minimun heigth of 44px */
-@keyframes rotate{
+@keyframes rotate {
     0% {
         transform: rotate(0deg);
     }
@@ -312,19 +363,22 @@ transition-duration: 0.4s;
         transform: rotate(360deg);
     }
 }
-@media screen and (max-width:500px){
-    html{
+
+@media screen and (max-width:500px) {
+    html {
         height: 100%;
         width: 100%;
     }
-    .container-nb{
+
+    .container-nb {
         display: grid;
         grid-template-columns: 20% 80%;
         grid-template-rows: auto 85vh 8vh;
         grid-auto-rows: none;
         grid-auto-columns: none;
     }
-    .top-nav-btn{
+
+    .top-nav-btn {
         height: 30px;
         padding: 1px;
         color: #44281d;
@@ -333,28 +387,33 @@ transition-duration: 0.4s;
         font-size: 12px;
         margin-bottom: 10px;
     }
-    .episode-btn{
+
+    .episode-btn {
         background-color: transparent;
         font-size: 8px;
         font-weight: 200;
         border: none;
         margin: 0;
         transition-duration: none;
-        }
-    .episode-btn:hover{
+    }
+
+    .episode-btn:hover {
         text-decoration: none;
         font-size: 8px;
     }
+
     header .col {
         margin: 0 0 5px 0;
         padding: 0 0 5px 0;
     }
-    .top-icon{
-        display:none;
+
+    .top-icon {
+        display: none;
         height: 44px;
         width: 44px;
     }
-    .vortex{
+
+    .vortex {
         grid-column: 2;
         grid-row: 2;
         height: 100%;
@@ -369,19 +428,22 @@ transition-duration: 0.4s;
         animation: rotate 15s linear infinite;
     }
 
-    .collapse{
+    .collapse {
         padding: 0;
     }
-    .card-body{
+
+    .card-body {
         margin: 0;
         padding: 1px;
     }
-    .main-character-board{
+
+    .main-character-board {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .nav-container{
+
+    .nav-container {
         grid-row: 1/4;
         grid-column: 1;
         height: 100%;
@@ -392,7 +454,8 @@ transition-duration: 0.4s;
         align-items: center;
         justify-content: center;
     }
-    .character-img-container{
+
+    .character-img-container {
         grid-column: 1;
         height: 100%;
         width: 100%;
@@ -400,36 +463,45 @@ transition-duration: 0.4s;
         align-items: center;
         justify-content: center;
     }
-    .character-img{
+
+    .character-img {
         height: 90%;
         width: 90%;
     }
-    .character-data{
+
+    .character-data {
         padding: 0;
     }
-    .character-view{
+
+    .character-view {
         display: grid;
         grid-template-rows: 25% 75%;
         grid-template-columns: 45% 55%;
         z-index: 10;
     }
-    .character-episodes{
+
+    .character-episodes {
         padding: 0;
     }
-    .episode-list-container{
+
+    .episode-list-container {
         grid-template-columns: repeat(6, auto);
     }
-    .episode-list-container p{
+
+    .episode-list-container p {
         font-size: 12px;
         margin: 1px;
     }
-    .nav-characters{
+
+    .nav-characters {
         margin-top: 4px;
         padding: 0;
     }
-    .nav-characters-container{
+
+    .nav-characters-container {
         background-color: #f0e14a;
     }
+
     .nav-characters-container button {
         height: 44px;
         padding: 1px;
@@ -440,5 +512,17 @@ transition-duration: 0.4s;
         border: 1px solid rgba(124, 240, 74, 0.5);
         background-color: #b9fa5d;
 
+    }
+
+    .char-data-text {
+        font-weight: 600;
+        font-size: 14px;
+        margin: 0;
+        height: 3vh;
+    }
+
+    .char-data-text-span {
+        font-size: 12px;
+        margin: 0;
     }
 }
